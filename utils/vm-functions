@@ -24,8 +24,8 @@ register_channels() {
   else
     if [ -x /usr/bin/dnf ]; then
       grep -q ^proxy= /etc/dnf/dnf.conf || echo proxy=$PROXY >>/etc/dnf/dnf.conf
-    else
-      grep -q ^proxy= /etc/yum.conf || echo proxy=$PROXY >>/etc/yum.conf
+#    else
+#      grep -q ^proxy= /etc/yum.conf || echo proxy=$PROXY >>/etc/yum.conf
     fi
   fi
 
