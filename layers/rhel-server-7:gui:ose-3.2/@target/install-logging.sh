@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-oadm new-project logging
+#oadm new-project logging
 oc project logging
 
 openshift admin ca create-server-cert --key=kibana.key --cert=kibana.crt --hostnames=kibana,kibana.example.com,kibana-ops.example.com --signer-cert=/etc/origin/master/ca.crt --signer-key=/etc/origin/master/ca.key --signer-serial=/etc/origin/master/ca.serial.txt
