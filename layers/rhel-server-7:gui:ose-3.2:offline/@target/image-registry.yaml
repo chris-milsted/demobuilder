@@ -19,7 +19,7 @@ items:
           image: docker.io/registry:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
-          - mountPath: /tmp
+          - mountPath: /var/lib/registry
             name: image-registry
           securityContext:
             runAsUser: 0
