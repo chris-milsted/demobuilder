@@ -22,6 +22,14 @@ done
 
 mkdir /image-registry
 chcon -t svirt_sandbox_file_t /image-registry
+
+### Added ability for registry service account to run as root and to mount volumes as anyuid
+
+oadm policy add-scc-to-user anyuid system:serviceaccount:default:registry
+oadm policy add-scc-to-user hostmount-anyuid system:serviceaccount:default:registry
+
+# End Hack
+
 oc create -f image-registry.yaml
 
 yum_install gcc python-devel sqlite-devel
