@@ -23,5 +23,5 @@ build:
 layer:
   cpus: 1
   mem: 1024
-  disk: 40
+  disk: 60
   nested: "false"
