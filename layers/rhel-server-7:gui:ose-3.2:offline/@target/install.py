@@ -126,6 +126,9 @@ def copy_image(repo, i):
             removeset.add(newi)
             removeset.add(i)
         else:
+          if ( "sha256" in i ):
+            print >>sys.stderr, "uglyhack - do not tag and do anything if sha256 in the image name"
+          else:    
             system("docker pull " + i)
             system("docker tag " + i + " " + newi)
             system("docker push " + newi, 5)
