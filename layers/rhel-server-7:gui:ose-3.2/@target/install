@@ -8,7 +8,7 @@ register_channels rhel-7-server-rpms rhel-7-server-extras-rpms
 register_channels rhel-7-server-ose-3.2-rpms
 # curl -so /etc/yum.repos.d/auto-puddle.repo http://download.eng.bos.redhat.com/rcm-guest/puddles/RHAOS/AtomicOpenShift/3.2/2016-05-10.1/puddle.repo
 
-yum_install atomic-openshift bind-utils docker lsof openshift-ansible-playbooks PyPAM net-tools nmap-ncat strace tcpdump unzip
+yum_install atomic-openshift bind-utils docker lsof openshift-ansible-playbooks PyPAM net-tools nmap-ncat strace tcpdump unzip --exclude docker-1.10* --exclude docker-selinux-1.10*
 
 # sed -i -e 's/^ADD_REGISTRY=.*/ADD_REGISTRY='"'"'--add-registry brew-pulp-docker01.web.prod.ext.phx2.redhat.com:8888 --add-registry registry.access.redhat.com'"'"'/' /etc/sysconfig/docker
 # sed -i -e 's/^# INSECURE_REGISTRY=.*/INSECURE_REGISTRY='"'"'--insecure-registry brew-pulp-docker01.web.prod.ext.phx2.redhat.com:8888'"'"'/' /etc/sysconfig/docker
